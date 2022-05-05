@@ -1,0 +1,15 @@
+select * from customer;
+select pname,price from product;
+select distinct p_id from invoice_item;
+select price from product where price between 5 and 50;
+select * from customer where city in('pta','tvm');
+select * from invoice_master where inv_date between '2021-01-01' and '2021-03-31'; 
+select * from customer where city not in('tvm');
+select cust_id from customer where ph_no IS NULL;
+select cust_id from customer order by cust_id desc;
+select * from customer order by city asc, cust_id desc;
+select city from customer where city like binary'p%';
+select city from customer where city like binary'%t%' or city like binary '%p%';
+select city from customer where city like'___%';
+select city from customer where city like binary'_n%';
+select * from customer where city like binary 'k___%';
