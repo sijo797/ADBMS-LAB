@@ -2,5 +2,5 @@ select pname,price from product where pname !='soap';
 select min(price),max(price),avg(price) from product;
 select city,count(city) as count from customer group by city;
 select city,count(city) as count from customer group by city having count(city)>3;
-select concat(cust_id,'lives in',city)as 'who,where' from customer;
+select concat(name,'lives in',city)as 'who,where' from customer;
 

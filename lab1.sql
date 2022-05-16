@@ -9,7 +9,7 @@ alter table student modify dob year;
 desc student;
 alter table student drop city;
 desc student;
-create table CUSTOMER(cust_id int primary key auto_increment, address varchar(30), city varchar(20), ph_no int);
+create table CUSTOMER(cust_id int primary key auto_increment, address varchar(30), city varchar(20), ph_no int, name varchar(30));
 desc CUSTOMER;
 create table PRODUCT(p_id int primary key auto_increment, pname varchar(20), price int default'0');
 desc PRODUCT;
@@ -21,3 +21,7 @@ show tables;
 TRUNCATE student;
 drop table student;
 show tables;
+
+
+
+

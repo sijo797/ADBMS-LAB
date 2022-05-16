@@ -1,18 +1,17 @@
 use invoice;
 show tables;
 desc customer;
-insert into customer values(1,'kaattuparambil','ekm',89900987);
-insert into customer values(2,'meleparambil','tvm',89900988);
-insert into customer values(3,'pazhayedathu','knr',89900989);
-insert into customer values(4,'malayail','wynd',89900990);
-insert into customer values(5,'mangalasseri','kochi',89900991);
+insert into customer values(1,'kaattuparambil','kozhikode',89900987,'Appu');
+insert into customer values(2,'meleparambil','tvm',89900988,'ansu');
+insert into customer values(3,'pazhayedathu','knr',89900989,'jeffin');
+insert into customer values(4,'malayail','wynd',89900990,'sachin');
+insert into customer values(5,'mangalasseri','kochi',89900991,'sonu');
+insert into customer values(6,'mangalathu','ktym',null,'pranav');
 select * from customer;
 insert into product values(100,'ink',20);
 insert into product values(101,'soap',50);
 insert into product values(102,'notebook',40);
 insert into product values(103,'refiller',5);
-insert into product values(104,'eraser',10);
-select * from product;
 insert into product values(104,'eraser',10);
 select * from product;
 insert into invoice_master values(200,1,'2021-02-01'); 
@@ -33,6 +32,9 @@ update customer  set ph_no=89900970 where cust_id=2;
 select * from customer;
 delete from invoice_item where inv_id=202;
 select * from invoice_item;
+delete from invoice_master where inv_id=200;
+select * from invoice_master;
+
 
 
 
