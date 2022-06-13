@@ -1,0 +1,13 @@
+use student
+'switched to db student'
+db.createUser({user:"reportsUser",pwd:passwordPrompt(),roles:[]})
+{ ok: 1 }
+db.createUser({ user: "appAdmin",pwd: passwordPrompt(), roles:[ { role: "readWrite", db:
+"config" }]})
+{ ok: 1 }
+db.createUser({user: "restricted", pwd: passwordPrompt(), roles: [ { role: "readWrite", db:
+"reporting" } ],authenticationRestrictions: [ {clientSource: ["192.0.2.0"], serverAddress:
+["198.51.100.0"]} ]})
+{ ok: 1 }
+db.dropUser("reportsUser",{w:"majority",wtimeout:5000})
+{ ok: 1 }

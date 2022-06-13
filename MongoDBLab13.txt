@@ -1,0 +1,89 @@
+db.customer.find({$or:[{"city":"kozhikode"},{"city":"malappuram"}]}).pretty()
+{ _id: ObjectId("62a6baefc192cef03751aefa"),
+  name: 'anju',
+  address: 'anju bhavan',
+  city: 'malappuram',
+  age: '40',
+  phone_no: '123456789' }
+{ _id: ObjectId("62a6bd15c192cef03751aefc"),
+  name: 'nayana',
+  address: 'nayans',
+  city: 'kozhikode',
+  age: '50',
+  phone_no: '97890642' }
+{ _id: ObjectId("62a6bd15c192cef03751aefd"),
+  name: 'jimin',
+  address: 'abed',
+  city: 'kozhikode',
+  age: '34',
+  phone_no: '9863665432' }
+db.customer.find({"age":{$lt:"50"}}).pretty()
+{ _id: ObjectId("62a6baefc192cef03751aefa"),
+  name: 'anju',
+  address: 'anju bhavan',
+  city: 'malappuram',
+  age: '40',
+  phone_no: '123456789' }
+{ _id: ObjectId("62a6bd15c192cef03751aefd"),
+  name: 'jimin',
+  address: 'abed',
+  city: 'kozhikode',
+  age: '34',
+  phone_no: '9863665432' }
+{ _id: ObjectId("62a6bd15c192cef03751aefe"),
+  name: 'surya',
+  address: 'white house',
+  city: 'kochi',
+  age: '43',
+  phone_no: '9048857036' }
+db.customer.find({"age":{$gte:"40"}}).pretty()
+{ _id: ObjectId("62a6baefc192cef03751aefa"),
+  name: 'anju',
+  address: 'anju bhavan',
+  city: 'malappuram',
+  age: '40',
+  phone_no: '123456789' }
+{ _id: ObjectId("62a6bd15c192cef03751aefc"),
+  name: 'nayana',
+  address: 'nayans',
+  city: 'kozhikode',
+  age: '50',
+  phone_no: '97890642' }
+{ _id: ObjectId("62a6bd15c192cef03751aefe"),
+  name: 'surya',
+  address: 'white house',
+  city: 'kochi',
+  age: '43',
+  phone_no: '9048857036' }
+db.customer.find({"city":{$ne:"kozhikode"}}).pretty()
+{ _id: ObjectId("62a6baefc192cef03751aefa"),
+  name: 'anju',
+  address: 'anju bhavan',
+  city: 'malappuram',
+  age: '40',
+  phone_no: '123456789' }
+{ _id: ObjectId("62a6bd15c192cef03751aefe"),
+  name: 'surya',
+  address: 'white house',
+  city: 'kochi',
+  age: '43',
+  phone_no: '9048857036' }
+db.customer.find({$nor:[{"city":"kochi"},{"city":"malappuram"}]}).prety()
+TypeError: db.customer.f ... m"}]}).prety is not a function
+db.customer.find({$nor:[{"city":"kochi"},{"city":"malappuram"}]}).pretty()
+{ _id: ObjectId("62a6bd15c192cef03751aefc"),
+  name: 'nayana',
+  address: 'nayans',
+  city: 'kozhikode',
+  age: '50',
+  phone_no: '97890642' }
+{ _id: ObjectId("62a6bd15c192cef03751aefd"),
+  name: 'jimin',
+  address: 'abed',
+  city: 'kozhikode',
+  age: '34',
+  phone_no: '9863665432' }
+db.product.distinct("productname")
+[]
+db.product.distinct("productName")
+[ 'eraser', 'pen', 'pencil' ]

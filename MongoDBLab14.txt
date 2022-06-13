@@ -1,0 +1,35 @@
+db.customer.find().sort({name:1}).pretty()
+{ _id: ObjectId("62a6baefc192cef03751aefa"),
+  name: 'anju',
+  address: 'anju bhavan',
+  city: 'malappuram',
+  age: '40',
+  phone_no: '123456789' }
+{ _id: ObjectId("62a6bd15c192cef03751aefd"),
+  name: 'jimin',
+  address: 'abed',
+  city: 'kozhikode',
+  age: '34',
+  phone_no: '9863665432' }
+{ _id: ObjectId("62a6bd15c192cef03751aefc"),
+  name: 'nayana',
+  address: 'nayans',
+  city: 'kozhikode',
+  age: '50',
+  phone_no: '97890642' }
+{ _id: ObjectId("62a6bd15c192cef03751aefe"),
+  name: 'surya',
+  address: 'white house',
+  city: 'kochi',
+  age: '43',
+  phone_no: '9048857036' }
+db.customer.aggregate([{$count:"city"}])
+{ city: 4 }
+db.customer.aggregate([{$group:{_id:"$city",total:{$sum:1}}}])
+{ _id: 'malappuram', total: 1 }
+{ _id: 'kozhikode', total: 2 }
+{ _id: 'kochi', total: 1 }
+db.customer.aggregate([{$group:{_id:"$city",min_age:{$min:"$age"},max_age:{$max:"$age"}}}])
+{ _id: 'malappuram', min_age: '40', max_age: '40' }
+{ _id: 'kozhikode', min_age: '34', max_age: '50' }
+{ _id: 'kochi', min_age: '43', max_age: '43' }
